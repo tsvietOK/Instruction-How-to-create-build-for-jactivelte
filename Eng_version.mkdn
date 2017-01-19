@@ -37,3 +37,21 @@
 	  
 ##### Initializing the repo and downloading the manifest
 ######Now you must choose the rom that you want tot build
+######If you choose is ResurrectionRemix
+
+	 $  repo init -u https://github.com/ResurrectionRemix/platform_manifest.git -b nougat
+	 
+######If you choose is LineageOS14.1
+
+	 $  repo init -u git://github.com/LineageOS/android.git -b cm-14.1
+######If you choose is Optimized-LineageOS14.1	 
+
+	 $  repo init -u git://github.com/JDCTeam/manifests.git -b opt-cm-14.1
+	 
+##### Syncing the source
+[Hint: This might take a long time as the source is ~20GB]
+
+      $  repo sync -f --force-sync --no-clone-bundle
+	 
+#####Creating local_manifest
+######Now open any file manager (if you're on Ubuntu, it will be Nautilus), press CTRL+H, open the folder .repo, create a new folder called "local_manifests", open put my local_manifest.xml (you can find it on my Github).
