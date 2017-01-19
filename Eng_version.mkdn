@@ -42,14 +42,14 @@
 	 $ git config --global user.email "YOUR EMAIL ADDRESS"
 
 ######Now you must choose the rom that you want tot build
--If you choose is ResurrectionRemix
+- If you choose is ResurrectionRemix
 
 	 $  repo init -u https://github.com/ResurrectionRemix/platform_manifest.git -b nougat
 	 
--If you choose is LineageOS14.1
+- If you choose is LineageOS14.1
 
 	 $  repo init -u git://github.com/LineageOS/android.git -b cm-14.1
--If you choose is Optimized-LineageOS14.1	 
+- If you choose is Optimized-LineageOS14.1	 
 
 	 $  repo init -u git://github.com/JDCTeam/manifests.git -b opt-cm-14.1
 	 
