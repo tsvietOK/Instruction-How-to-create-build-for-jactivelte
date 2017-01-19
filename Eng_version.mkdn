@@ -32,24 +32,24 @@
 
 ##### Creating directory for where the RR repo will be stored and synced
 
-     $ mkdir ~/RR            (or you can choose smth else name)
+     $ mkdir ~/RR 
      $ cd ~/RR
 	  
 ##### Initializing the repo and downloading the manifest
-######Config Git(paste your name and and email into fields)
+######Config Git(paste your name and email into fields)
 
 	 $ git config --global user.name "YOUR NAME" 
 	 $ git config --global user.email "YOUR EMAIL ADDRESS"
 
 ######Now you must choose the rom that you want tot build
-######If you choose is ResurrectionRemix
+-If you choose is ResurrectionRemix
 
 	 $  repo init -u https://github.com/ResurrectionRemix/platform_manifest.git -b nougat
 	 
-######If you choose is LineageOS14.1
+-If you choose is LineageOS14.1
 
 	 $  repo init -u git://github.com/LineageOS/android.git -b cm-14.1
-######If you choose is Optimized-LineageOS14.1	 
+-If you choose is Optimized-LineageOS14.1	 
 
 	 $  repo init -u git://github.com/JDCTeam/manifests.git -b opt-cm-14.1
 	 
@@ -65,3 +65,32 @@
 	 
 ######Now, go to CM14.1/device/samsung/jf-common and open BoardConfigCommon.mk
 ######Here, if the BOARD_RECOVERYIMAGE_PARTITION_SIZE := is not set to 11300000 or more, change it, otherwise the build will fail.
+
+##### Setting Up CCache
+- CCache is a method of utilizing a specified storage space to speed up building. It can be referred to as the same caching your android device does to speed up application and system boot times. In this case, CCache will help build Resurrection Remix faster than standard build times (Able to cut-down 50% of time taken to build).
+- To set up CCache, follow the following:
+
+
+        $ echo "export USE_CCACHE=1" >> ~/.bashrc
+      
+        $ ~/RR/prebuilts/misc/linux-x86/ccache/ccache -M 50G
+
+     -M 50G
+The number before the letter G at the end specifies the amount of space CCache can use in your storage unit. As such, ensure that not too much of space is specified as this might result in unexpected errors although, the more storage you have, its recommended to have more CCache as it will increase the build times. Most efficient build systems are able to utilize CCache to about 120G or more.
+##### To build Resurrection Remix ROM
+
+      $ cd ~/RR
+      $ . build/envsetup.sh && brunch <device>
+
+##### Obtaining the zip created from the build process
+To get the zip file that has been built, navigate to the following directory and find for the zip file:
+
+      $ cd ~/RR/out/target/product/<devicename>/
+
+If you found it, then congratulations! If you didn't, try retrying the build process but before doing so, ensure you do the following to make sure your next build is clean;
+
+      $ cd ~/RR
+      $ make clean
+      $ repo sync --force-sync
+
+After doing so, redo everything stated from the Building Section.
