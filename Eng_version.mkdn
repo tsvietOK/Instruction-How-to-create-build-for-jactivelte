@@ -41,15 +41,15 @@
 	 $ git config --global user.name "YOUR NAME" 
 	 $ git config --global user.email "YOUR EMAIL ADDRESS"
 
-######Now you must choose the rom that you want tot build
-- If you choose is ResurrectionRemix
+#####Now you must choose the rom that you want tot build
+######If you choose is ResurrectionRemix
 
 	 $  repo init -u https://github.com/ResurrectionRemix/platform_manifest.git -b nougat
 	 
-- If you choose is LineageOS14.1
+######If you choose is LineageOS14.1
 
 	 $  repo init -u git://github.com/LineageOS/android.git -b cm-14.1
-- If you choose is Optimized-LineageOS14.1	 
+######If you choose is Optimized-LineageOS14.1	 
 
 	 $  repo init -u git://github.com/JDCTeam/manifests.git -b opt-cm-14.1
 	 
@@ -63,6 +63,11 @@
 
 	 $  repo sync -f --force-sync --no-clone-bundle
 	 
+###Building the Resurrection Remix ROM
+- Preparing Required Binaries and Device Drivers
+- Setting Up CCache (Optional)
+- Building Resurrection Remix
+
 ######Now, go to CM14.1/device/samsung/jf-common and open BoardConfigCommon.mk
 ######Here, if the BOARD_RECOVERYIMAGE_PARTITION_SIZE := is not set to 11300000 or more, change it, otherwise the build will fail.
 
