@@ -51,7 +51,12 @@
 ##### Syncing the source
 [Hint: This might take a long time as the source is ~20GB]
 
-      $  repo sync -f --force-sync --no-clone-bundle
+     $  repo sync -f --force-sync --no-clone-bundle
 	 
 #####Creating local_manifest
-######Now open any file manager (if you're on Ubuntu, it will be Nautilus), press CTRL+H, open the folder .repo, create a new folder called "local_manifests", open put my local_manifest.xml (you can find it on my Github).
+######Now open any file manager (if you're on Ubuntu, it will be Nautilus), press CTRL+H, open the folder .repo, create a new folder called "local_manifests", open put my local_manifest.xml (you can find it on my Github) and repo sync again..
+
+	 $  repo sync -f --force-sync --no-clone-bundle
+	 
+######Now, go to CM14.1/device/samsung/jf-common and open BoardConfigCommon.mk
+Here, if the BOARD_RECOVERYIMAGE_PARTITION_SIZE := is not set to 11300000 or more, change it, otherwise the build will fail.
