@@ -1,7 +1,7 @@
 ### Build Environment
 - Tested and Working on  Ubuntu - 16.04.1 (64-bit)
 - Decent hardware (minimum of at least a dual core CPU and 8 GB of RAM)
-- A storage unit of any kind (We recommend utilizing SSDs as Mechanical HDDs slow down the build proccess drastically and the minimum storage size is 70GB. Having more will be useful with CCache[More on that later])
+- A storage unit of any kind (We recommend utilizing SSDs as Mechanical HDDs slow down the build proccess drastically and the minimum storage size is 100GB. Having more will be useful with CCache[More on that later])
 - Required Packages should have been installed
 
 ### Required Packages
