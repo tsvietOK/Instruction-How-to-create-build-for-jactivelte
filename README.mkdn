@@ -30,7 +30,7 @@
 
      $ chmod a+x ~/bin/repo
 
-##### Creating directory for where the RR repo will be stored and synced
+##### Creating directory for where the repo will be stored and synced
 
      $ mkdir ~/RR 
      $ cd ~/RR
