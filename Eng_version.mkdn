@@ -16,26 +16,31 @@
 
 ##### Make directory for the repo binary
 
-      $ mkdir ~/bin
+     $ mkdir ~/bin
 
 ##### Add directory for the repo binary to its path
 
-      $ PATH=~/bin:$PATH
+     $ PATH=~/bin:$PATH
 
 ##### Downloading repo binary and placing it in the proper directory
 
-      $ curl http://commondatastorage.googleapis.com/git-repo-downloads/repo > ~/bin/repo
+     $ curl http://commondatastorage.googleapis.com/git-repo-downloads/repo > ~/bin/repo
 
 ##### Giving the repo binary the proper permissions
 
-      $ chmod a+x ~/bin/repo
+     $ chmod a+x ~/bin/repo
 
 ##### Creating directory for where the RR repo will be stored and synced
 
-      $ mkdir ~/RR            (or you can choose smth else name)
-      $ cd ~/RR
+     $ mkdir ~/RR            (or you can choose smth else name)
+     $ cd ~/RR
 	  
 ##### Initializing the repo and downloading the manifest
+######Config Git(paste your name and and email into fields)
+
+	 $ git config --global user.name "YOUR NAME" 
+	 $ git config --global user.email "YOUR EMAIL ADDRESS"
+
 ######Now you must choose the rom that you want tot build
 ######If you choose is ResurrectionRemix
 
@@ -59,4 +64,4 @@
 	 $  repo sync -f --force-sync --no-clone-bundle
 	 
 ######Now, go to CM14.1/device/samsung/jf-common and open BoardConfigCommon.mk
-Here, if the BOARD_RECOVERYIMAGE_PARTITION_SIZE := is not set to 11300000 or more, change it, otherwise the build will fail.
+######Here, if the BOARD_RECOVERYIMAGE_PARTITION_SIZE := is not set to 11300000 or more, change it, otherwise the build will fail.
