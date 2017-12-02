@@ -68,9 +68,6 @@
 - Setting Up CCache (Optional)
 - Building Resurrection Remix
 
-######Now, go to CM14.1/device/samsung/jf-common and open BoardConfigCommon.mk
-######Here, if the BOARD_RECOVERYIMAGE_PARTITION_SIZE := is not set to 11300000 or more, change it, otherwise the build will fail.
-
 ##### Setting Up CCache
 - CCache is a method of utilizing a specified storage space to speed up building. It can be referred to as the same caching your android device does to speed up application and system boot times. In this case, CCache will help build Resurrection Remix faster than standard build times (Able to cut-down 50% of time taken to build).
 - To set up CCache, follow the following:
