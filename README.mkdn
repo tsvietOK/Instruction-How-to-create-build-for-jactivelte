@@ -1,7 +1,7 @@
 ### Build Environment
-- Tested and Working on  Ubuntu - 16.04.1 (64-bit)
+- Tested and Working on  Ubuntu - 16.04 (64-bit)
 - Decent hardware (minimum of at least a dual core CPU and 8 GB of RAM)
-- A storage unit of any kind (We recommend utilizing SSDs as Mechanical HDDs slow down the build proccess drastically and the minimum storage size is 100GB. Having more will be useful with CCache[More on that later])
+- A storage unit of any kind (We recommend utilizing SSDs as Mechanical HDDs slow down the build proccess drastically and the minimum storage size is 150GB. Having more will be useful with CCache[More on that later])
 - Required Packages should have been installed
 
 ### Required Packages
@@ -32,8 +32,8 @@
 
 ##### Creating directory for where the repo will be stored and synced
 
-     $ mkdir ~/RR 
-     $ cd ~/RR
+     $ mkdir ~/lineage 
+     $ cd ~/lineage
 	  
 ##### Initializing the repo and downloading the manifest
 ######Config Git(paste your name and email into fields)
@@ -42,34 +42,23 @@
 	 $ git config --global user.email "YOUR EMAIL ADDRESS"
 
 #####Now you must choose the rom that you want tot build
-######If you choose is ResurrectionRemix
-
-	 $  repo init -u https://github.com/ResurrectionRemix/platform_manifest.git -b nougat
 	 
-######If you choose is LineageOS14.1
+######If you choose is LineageOS 15.1 from me
 
-	 $  repo init -u git://github.com/LineageOS/android.git -b cm-14.1
-######If you choose is Optimized-LineageOS14.1	 
-
-	 $  repo init -u git://github.com/JDCTeam/manifests.git -b opt-cm-14.1
+	 $  repo init -u git://github.com/tsvietOK/android.git -b lineage-15.1
 	 
 ##### Syncing the source
-[Hint: This might take a long time as the source is ~20GB]
+[Hint: This might take a long time as the source is ~25GB]
 
      $  repo sync -f --force-sync --no-clone-bundle
 	 
-#####Creating local_manifest
-######Now open any file manager (if you're on Ubuntu, it will be Nautilus), press CTRL+H, open the folder .repo, create a new folder called "local_manifests", open put my local_manifest.xml (you can find it on my Github) and repo sync again..
-
-	 $  repo sync -f --force-sync --no-clone-bundle
-	 
-###Building the Resurrection Remix ROM
+###Building
 - Preparing Required Binaries and Device Drivers
 - Setting Up CCache (Optional)
-- Building Resurrection Remix
+- Building
 
 ##### Setting Up CCache
-- CCache is a method of utilizing a specified storage space to speed up building. It can be referred to as the same caching your android device does to speed up application and system boot times. In this case, CCache will help build Resurrection Remix faster than standard build times (Able to cut-down 50% of time taken to build).
+- CCache is a method of utilizing a specified storage space to speed up building. It can be referred to as the same caching your android device does to speed up application and system boot times. In this case, CCache will help build faster than standard build times (Able to cut-down 50% of time taken to build).
 - To set up CCache, follow the following:
 
 
@@ -80,25 +69,20 @@
      -M 50G
 The number before the letter G at the end specifies the amount of space CCache can use in your storage unit. As such, ensure that not too much of space is specified as this might result in unexpected errors although, the more storage you have, its recommended to have more CCache as it will increase the build times. Most efficient build systems are able to utilize CCache to about 120G or more.
 
-##### To build Resurrection Remix ROM
+##### To build ROM
 
-      $ cd ~/RR
+      $ cd ~/lineage
       $ . build/envsetup.sh && brunch jactivelte
 
 ##### Obtaining the zip created from the build process
 To get the zip file that has been built, navigate to the following directory and find for the zip file:
 
-      $ cd ~/RR/out/target/product/jactivelte/
+      $ cd ~/lineage/out/target/product/jactivelte/
 
 If you found it, then congratulations! If you didn't, try retrying the build process but before doing so, ensure you do the following to make sure your next build is clean;
 
-      $ cd ~/RR
+      $ cd ~/lineage
       $ make clean
       $ repo sync --force-sync
 
 After doing so, redo everything stated from the Building Section.
-
-######This instruction based on 
-
-- https://github.com/ResurrectionRemix/platform_manifest
-- https://forum.xda-developers.com/galaxy-s4-active/general/noobproof-compile-cm14-1-based-t3528967
